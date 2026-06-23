@@ -1,9 +1,0 @@
-{
-  "name": "PoW Rarity #42",
-  "description": "Common tier NFT secured by Proof of Work. Fair mint, no bots.",
-  "image": "ipfs://YOUR_COMMON_CID/common.png",
-  "attributes": [
-    {"trait_type": "Rarity", "value": "Common"},
-    {"trait_type": "Difficulty Bits", "value": 18}
-  ]
-}

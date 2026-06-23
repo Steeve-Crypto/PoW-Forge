@@ -101,6 +101,3 @@ export default function TourGuide({ autoStart = false }: TourGuideProps) {
     </button>
   );
 }
-```
-
-Update layout or main page to include the tour.

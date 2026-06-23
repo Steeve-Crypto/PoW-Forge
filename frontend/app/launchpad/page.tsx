@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useAccount, useWriteContract, useWatchContractEvent } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useQuery } from "@apollo/client";
+import { useQuery, gql} from "@apollo/client";
 import { LaunchpadFactoryABI } from "@/lib/abis";
 import { CONTRACT_ADDRESSES } from "@/lib/config";
 import { GET_MY_COLLECTIONS } from "@/lib/subgraph";
@@ -25,7 +25,7 @@ export default function LaunchpadPage() {
   const { writeContract } = useWriteContract();
 
   // Historical "My Deployed Collections" from The Graph subgraph
-  const { data: subgraphData, loading: subgraphLoading } = useQuery(GET_MY_COLLECTIONS, {
+const { data: subgraphData, loading: subgraphLoading } = useQuery(GET_MY_COLLECTIONS as any, {
     variables: { deployer: address?.toLowerCase() },
     skip: !address,
   });

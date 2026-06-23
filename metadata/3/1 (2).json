@@ -1,0 +1,10 @@
+{
+  "name": "PoW Rarity #1",
+  "description": "Legendary tier NFT minted via elite Proof of Work. This required exceptional computational effort.",
+  "image": "ipfs://YOUR_LEGENDARY_CID/legendary.png",
+  "attributes": [
+    {"trait_type": "Rarity", "value": "Legendary"},
+    {"trait_type": "Difficulty Bits", "value": 42},
+    {"trait_type": "PoW Quality", "value": "Exceptional"}
+  ]
+}

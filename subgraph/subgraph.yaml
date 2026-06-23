@@ -1,0 +1,31 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: HybridPoWNFT
+    network: sepolia # or mainnet/base etc.
+    source:
+      address: "0xYOUR_DEPLOYED_HYBRIDPOWNFT_ADDRESS"
+      abi: HybridPoWNFT
+      startBlock: 12345678 # Update with deploy block
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - HybridMintRequest
+        - NFT
+        - TreasuryWithdraw
+        - DifficultyUpdate
+      abis:
+        - name: HybridPoWNFT
+          file: ./abis/HybridPoWNFT.json
+      eventHandlers:
+        - event: HybridMintRequested(indexed uint256,indexed address,uint256)
+          handler: handleHybridMintRequested
+        - event: HybridMintFulfilled(indexed uint256,indexed uint256,uint256)
+          handler: handleHybridMintFulfilled
+        - event: VRFConfigUpdated(uint64,bytes32)
+          handler: handleVRFConfigUpdated # optional
+      file: ./src/mapping.ts

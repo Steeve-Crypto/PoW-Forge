@@ -1,0 +1,36 @@
+type HybridMintRequest @entity {
+  id: ID!
+  requestId: BigInt!
+  user: Bytes!
+  nonce: BigInt!
+  timestamp: BigInt!
+  fulfilled: Boolean!
+  tokenId: BigInt
+  rarityScore: BigInt
+}
+
+type NFT @entity {
+  id: ID!
+  tokenId: BigInt!
+  owner: Bytes!
+  rarityScore: BigInt!
+  background: Int!
+  body: Int!
+  accessory: Int!
+  eyes: Int!
+  mintedAt: BigInt!
+  requestId: BigInt
+}
+
+type TreasuryWithdraw @entity {
+  id: ID!
+  amount: BigInt!
+  timestamp: BigInt!
+  to: Bytes!
+}
+
+type DifficultyUpdate @entity {
+  id: ID!
+  newTarget: BigInt!
+  timestamp: BigInt!
+}
